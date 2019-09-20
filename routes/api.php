@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/players', 'PlayerController@index');
+Route::get('/players/all', 'PlayerController@todos');
 Route::get('/players/{id}', 'PlayerController@show');
 Route::post('/players', 'PlayerController@store');
 Route::post('/players/{id}/answers', 'PlayerController@answer');
