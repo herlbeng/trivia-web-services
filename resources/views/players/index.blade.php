@@ -1,6 +1,16 @@
 @extends('layout')
 
 @section('content')
+
+    <table width="100%">
+        <tr>
+            <td><h2>{{ $title }}</h2></td>
+            <td><a class="" title="Registrar {{Request::path()}}" href="{{ asset('api/players/nuevo') }}"><span class="button is-primary"></span></a></td>
+            <td><a class="" title="Reporte de {{Request::path()}}" href="" target="">
+            <span class="glyphicon glyphicon-print"></span></a></td>
+        </tr>
+    </table>
+
     @if ($players->isNotEmpty())
         <table class="table">
             <thead class="thead bg-secondary text-white">

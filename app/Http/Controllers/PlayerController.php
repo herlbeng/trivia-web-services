@@ -28,6 +28,23 @@ class PlayerController extends Controller
         return new PlayerResource(Player::findOrFail($id));
     }
 
+    public function create()
+    {
+        $title = 'Registrar Jugador';
+        return view('players.create',compact('title'));
+    }
+
+    public function guardar(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        $player = Player::create($request->all());
+        $this->store($request);
+        $title = 'Jugadores';
+        return view('players.index',compact('title'))->render();;
+    }
+
     public function store(Request $request)
     {
         $request->validate([
