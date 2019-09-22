@@ -15,6 +15,7 @@ class PlayerController extends Controller
         //return new PlayerCollection(Player::all());
         $title = 'Jugadores';
         $players = Player::all();
+        //$this->todos();
         return view('players.index',compact('title','players'));
     }
 
